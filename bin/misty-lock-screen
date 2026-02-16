@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Locks the system using hyprlock.
+
+# Lock the screen
+pidof hyprlock || hyprlock &

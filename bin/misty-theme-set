@@ -1,0 +1,60 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+  echo "Usage: misty-theme-set <theme-name>"
+  exit 1
+fi
+
+CURRENT_THEME_PATH="$HOME/.config/misty/current/theme"
+NEXT_THEME_PATH="$HOME/.config/misty/current/next-theme"
+USER_THEMES_PATH="$HOME/.config/misty/themes"
+MISTY_THEMES_PATH="$MISTY_PATH/themes"
+
+THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+
+if [[ -d "$USER_THEMES_PATH/$THEME_NAME" ]]; then
+  THEME_PATH="$USER_THEMES_PATH/$THEME_NAME"
+elif [[ -d "$MISTY_THEMES_PATH/$THEME_NAME" ]]; then
+  THEME_PATH="$MISTY_THEMES_PATH/$THEME_NAME"
+else
+  echo "Theme '$THEME_NAME' does not exist"
+  exit 1
+fi
+
+# Setup clean next theme directory (for atomic theme config swapping)
+rm -rf "$NEXT_THEME_PATH"
+mkdir -p "$NEXT_THEME_PATH"
+
+# Copy static configs
+cp -r "$THEME_PATH/"* "$NEXT_THEME_PATH/" 2>/dev/null
+
+# Generate dynamic configs
+misty-theme-set-templates
+
+# Swap next theme in as current
+rm -rf "$CURRENT_THEME_PATH"
+mv "$NEXT_THEME_PATH" "$CURRENT_THEME_PATH"
+
+# Store theme name for reference
+echo "$THEME_NAME" >"$HOME/.config/misty/current/theme.name"
+
+# Change background with theme
+misty-theme-bg-next
+
+# Restart components to apply new theme
+if pgrep -x waybar >/dev/null; then
+  misty-restart-waybar
+fi
+misty-restart-swayosd
+misty-restart-terminal
+misty-restart-hyprctl
+misty-restart-btop
+misty-restart-mako
+
+# Change app-specific themes
+misty-theme-set-gnome
+misty-theme-set-browser
+misty-theme-set-vscode
+misty-theme-set-obsidian
+misty-theme-set-neovim
+misty-theme-set-emacs

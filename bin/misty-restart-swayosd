@@ -1,0 +1,3 @@
+#!/bin/bash
+
+misty-restart-app swayosd-server

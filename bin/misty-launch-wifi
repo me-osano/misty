@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Launch the Misty wifi controls (provided by the NetworkManager TUI).
+# Attempts to unblock the wifi service first in case it should be been blocked.
+
+rfkill unblock wifi
+misty-launchfocus-tui nmtui

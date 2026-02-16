@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\e[32mUpdate Mistletoe\e[0m"
+
+git -C $MISTY_PATH pull --autostash
+git -C $MISTY_PATH --no-pager diff --check || git -C $MISTY_PATH reset --merge

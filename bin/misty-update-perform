@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+# Ensure sleep doesn't set in during updates
+hyprctl dispatch tagwindow +noidle &>/dev/null || true
+
+# Capture update logs
+exec > >(tee "/tmp/misty-update.log") 2>&1
+
+# Perform all update steps
+misty-update-time
+misty-update-keyring
+misty-update-system-pkgs
+misty-migrate
+misty-update-aur-pkgs
+misty-update-orphan-pkgs
+
+misty-update-analyze-logs
+
+misty-update-restart
+
+# Re-enable screensaver/sleep after updates
+hyprctl dispatch tagwindow -- -noidle &>/dev/null || true

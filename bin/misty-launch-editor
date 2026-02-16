@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Launch the default editor as determined by $EDITOR
+# Starts suitable editors in a terminal window and otherwise as a regular application.
+
+misty-cmd-present "$EDITOR" || EDITOR=nvim
+
+case "$EDITOR" in
+nvim | vim | nano | micro | hx | helix | fresh)
+  exec misty-launch-tui "$EDITOR" "$@"
+  ;;
+*)
+  exec setsid "$EDITOR" "$@"
+  ;;
+esac
