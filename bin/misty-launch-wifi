@@ -4,4 +4,4 @@
 # Attempts to unblock the wifi service first in case it should be been blocked.
 
 rfkill unblock wifi
-exec $TERMINAL --class=org.misty.terminal bash -c 'nmtui; exec bash'
+exec $TERMINAL --class=org.misty.terminal -e bash -c 'nmtui; exec bash'
