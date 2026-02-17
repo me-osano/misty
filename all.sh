@@ -13,4 +13,4 @@ export PATH="$MISTY_PATH/bin:$PATH"
 #-------------------------------------------------------------------------------
 # 2. Begin modular installation
 #-------------------------------------------------------------------------------
-source "$MISTLETOE_INSTALL/all.sh"
+source "$MISTY_INSTALL/all.sh"
