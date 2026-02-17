@@ -164,10 +164,9 @@ show_setup_menu() {
   case $(menu "Setup" "$options") in
   *Wifi*) misty-launch-wifi ;;
   *Bluetooth*) misty-launch-bluetooth ;;
-  *Monitors*) open_in_editor ~/.config/hypr/monitors.conf ;;
-  *Keybindings*) open_in_editor ~/.config/hypr/keybindings.conf ;;
-  *Input*) open_in_editor ~/.config/hypr/input.conf ;;
-  *WindowRules*) open_in_editor ~/.config/hypr/windowrules.conf ;;
+  *Keybindings*) open_in_editor ~/.config/hypr/hyprland/keybindings.conf ;;
+  *Input*) open_in_editor ~/.config/hypr/hyprland/input.conf ;;
+  *WindowRules*) open_in_editor ~/.config/hypr/hyprland/windowrules.conf ;;
   *DNS*) present_terminal misty-setup-dns ;;
   *Security*) show_setup_security_menu ;;
   *Config*) show_setup_config_menu ;;
