@@ -21,3 +21,5 @@ sudo chmod a+rw /etc/chromium/policies/managed
 
 sudo mkdir -p /etc/brave/policies/managed
 sudo chmod a+rw /etc/brave/policies/managed
+
+echo "Done linking themes and creating themes directories"

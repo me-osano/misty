@@ -55,3 +55,5 @@ xdg-mime default nvim.desktop text/x-c
 xdg-mime default nvim.desktop text/x-c++
 xdg-mime default nvim.desktop application/xml
 xdg-mime default nvim.desktop text/xml
+
+echo "Done creating default mimetypes"
