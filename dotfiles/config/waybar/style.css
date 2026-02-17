@@ -75,7 +75,11 @@ window#waybar {
   margin-right: 17px;
 }
 
-#bluetooth.disconnected {
+#bluetooth.connected {
+  color: @blue;
+}
+
+#bluetooth.off {
   opacity: 0.5;
 }
 
@@ -97,6 +101,10 @@ window#waybar {
 
 #battery.critical {
   color: @red;
+}
+
+#pulseaudio.muted {
+  opacity: 0.5;
 }
 
 #custom-expand-icon {

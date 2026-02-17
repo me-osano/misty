@@ -3,3 +3,5 @@
 @define-color green {{ green }};
 @define-color red {{ red }};
 @define-color magenta {{ magenta }};
+@define-color yellow {{ yellow }};
+@define-color blue {{ blue }};
