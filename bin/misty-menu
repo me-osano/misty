@@ -40,6 +40,7 @@ menu() {
 
 terminal() {
   $TERMINAL --class=org.misty.terminal -e bash -c "$*"
+}
 
 present_terminal() {
   misty-launch-terminal $1
