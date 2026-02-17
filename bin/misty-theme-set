@@ -38,6 +38,9 @@ mv "$NEXT_THEME_PATH" "$CURRENT_THEME_PATH"
 # Store theme name for reference
 echo "$THEME_NAME" >"$HOME/.config/misty/current/theme.name"
 
+# Change background with theme
+misty-theme-bg-next
+
 # Restart components to apply new theme
 if pgrep -x waybar >/dev/null; then
   misty-restart-waybar
@@ -55,6 +58,3 @@ misty-theme-set-vscode
 misty-theme-set-obsidian
 misty-theme-set-neovim
 misty-theme-set-emacs
-
-# Change background with theme
-misty-theme-bg-next
