@@ -3,7 +3,7 @@
 # Returns drive information about a given volumne, like /dev/nvme0, which is used by misty-drive-select.
 
 if (($# == 0)); then
-  echo "Usage: mistletoe-drive-info [/dev/drive]"
+  echo "Usage: misty-drive-info [/dev/drive]"
   exit 1
 else
   drive="$1"

@@ -4,7 +4,7 @@
 
 COMMAND="$1"
 DESC="Snapshot $(date +'%Y-%m-%d %H:%M:%S')"
-MISTLETOE_PATH=${MISTLETOE_PATH:-$HOME/.local/share/misty}
+MISTY_PATH=${MISTY_PATH:-$HOME/.local/share/misty}
 LOG="/var/log/misty-snapshot.log"
 
 log() { echo "[$(date +'%F %T')] $*" | sudo tee -a "$LOG" >/dev/null; }

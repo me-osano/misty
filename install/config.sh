@@ -1,4 +1,4 @@
-# Copy over Mistletoe configs
+# Copy over Misty configs
 mkdir -p ~/.config
 cp -R ~/.local/share/misty/dotfiles/config/* ~/.config/
 
@@ -7,5 +7,5 @@ cp ~/.local/share/misty/dotfiles/bashrc ~/.bashrc
 cp ~/.local/share/misty/dotfiles/bash_profile ~/.bash_profile
 
 # Allow the user to change the branding for fastfetch
-mkdir -p ~/.config/mistletoe/branding
-cp ~/.local/share/misty/icon.txt ~/.config/mistletoe/branding/about.txt
+mkdir -p ~/.config/misty/branding
+cp ~/.local/share/misty/icon.txt ~/.config/misty/branding/about.txt

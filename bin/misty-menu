@@ -304,8 +304,8 @@ show_remove_menu() {
   *Web*) present_terminal misty-webapp-remove ;;
   *TUI*) present_terminal misty-tui-remove ;;
   *Development*) show_remove_development_menu ;;
-  *Secureboot*) present_terminal "mistletoe-setup-secureboot --remove" ;;
-  *Apparmor*) present_terminal "mistletoe-setup-apparmor --remove" ;;
+  *Secureboot*) present_terminal "misty-setup-secureboot --remove" ;;
+  *Apparmor*) present_terminal "misty-setup-apparmor --remove" ;;
   *) show_main_menu ;;
   esac
 }
@@ -314,7 +314,7 @@ show_remove_development_menu() {
   case $(menu "Remove" "󰫏  Ruby on Rails\n  JavaScript\n  Go\n  PHP\n  Python\n  Elixir\n  Zig\n  Rust\n  Java\n  .NET\n  OCaml\n  Clojure") in
   *Rails*) present_terminal "misty-remove-dev-env ruby" ;;
   *JavaScript*) show_remove_javascript_menu ;;
-  *Go*) present_terminal "mistletoe-remove-dev-env go" ;;
+  *Go*) present_terminal "misty-remove-dev-env go" ;;
   *PHP*) show_remove_php_menu ;;
   *Python*) present_terminal "misty-remove-dev-env python" ;;
   *Elixir*) show_remove_elixir_menu ;;
@@ -394,7 +394,7 @@ show_update_password_menu() {
 }
 
 show_about() {
-  mistletoe-launch-about
+  misty-launch-about
 }
 
 show_system_menu() {

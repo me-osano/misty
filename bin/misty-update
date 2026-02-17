@@ -2,7 +2,7 @@
 
 set -e
 
-trap 'echo ""; echo -e "\033[0;31mSomething went wrong during the update!\n\nPlease review the output above carefully, correct the error, and retry the update.\n\n;mistletoe-snapshot delete' ERR
+trap 'echo ""; echo -e "\033[0;31mSomething went wrong during the update!\n\nPlease review the output above carefully, correct the error, and retry the update.\n\n;misty-snapshot delete' ERR
 
 if [[ $1 == "-y" ]] || misty-update-confirm; then
   misty-snapshot create || [ $? -eq 127 ]

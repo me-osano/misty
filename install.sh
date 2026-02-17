@@ -28,7 +28,7 @@ git clone "https://github.com/${MISTY_REPO}.git" ~/.local/share/misty >/dev/null
 # Use custom branch if instructed, otherwise default to master
 MISTY_REF="${MISTY_REF:-master}"
 if [[ $MISTY_REF != "master" ]]; then
-  echo -e "\e[32mUsing branch: $MISTLETOE_REF\e[0m"
+  echo -e "\e[32mUsing branch: $MISTY_REF\e[0m"
   cd ~/.local/share/misty
   git fetch origin "${MISTY_REF}" && git checkout "${MISTY_REF}"
   cd -
