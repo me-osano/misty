@@ -70,7 +70,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "misty-launch-terminal nmtui"
+    "on-click": "misty-launch-wifi"
   },
   "battery": {
     "format": "{icon} {capacity}%",
