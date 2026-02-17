@@ -39,7 +39,7 @@ menu() {
 }
 
 terminal() {
-  $TERMINAL --class=org.misty.terminal "$@"
+  $TERMINAL --class=org.misty.terminal bash -c "$*"
 }
 
 present_terminal() {
@@ -109,8 +109,8 @@ show_screenshot_menu() {
 show_share_menu() {
   case $(menu "Share" "  Clipboard\n  File \n  Folder") in
   *Clipboard*) misty-cmd-share clipboard ;;
-  *File*) terminal bash -c "misty-cmd-share file" ;;
-  *Folder*) terminal bash -c "misty-cmd-share folder" ;;
+  *File*) terminal misty-cmd-share file ;;
+  *Folder*) terminal misty-cmd-share folder ;;
   *) back_to show_trigger_menu ;;
   esac
 }
@@ -158,7 +158,7 @@ show_setup_menu() {
   local options="  Wifi\n󰂯  Bluetooth"
   [ -f ~/.config/hypr/hyprland/keybindings.conf ] && options="$options\n  Keybindings"
   [ -f ~/.config/hypr/hyprland/input.conf ] && options="$options\n  Input"
-  [ -f ~/.config/hypr/hyprland/windowrules.conf ] && options="$options\n󰍹   WindowRules"
+  [ -f ~/.config/hypr/hyprland/windowrules.conf ] && options="$options\n󰍹  WindowRules"
   options="$options\n󰱔  DNS\n  Security\n  Config"
 
   case $(menu "Setup" "$options") in
