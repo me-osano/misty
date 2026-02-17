@@ -55,7 +55,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # ===========================================
 # Misty PATH Setup
 # ============================================
-export MISTY_PATH="$HOME/.local/misty"
+export MISTY_PATH="$HOME/.local/share/misty"
 export PATH="$MISTY_PATH/bin:$PATH"
 export MISTY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
 

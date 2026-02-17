@@ -10,4 +10,4 @@ cp ~/.local/share/misty/dotfiles/bash_profile ~/.bash_profile
 mkdir -p ~/.config/misty/branding
 cp ~/.local/share/misty/icon.txt ~/.config/misty/branding/about.txt
 
-echo "Done coying config files"
+echo "Done copying config files"
