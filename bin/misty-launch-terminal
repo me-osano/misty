@@ -3,4 +3,4 @@
 # Launch a floating terminal with the Misty logo presentation, then execute the command passed in, and finally end with the misty-show-done presentation.
 
 cmd="$*"
-exec setsid alacritty --app-id=org.misty.terminal --title=Misty -e bash -c "misty-show-logo; $cmd; if [ \$? -ne 130 ]; then misty-show-done; fi"
+exec setsid $TERMINAL --class=org.misty.terminal --title=Misty -e bash -c "misty-show-logo; $cmd; if [ \$? -ne 130 ]; then misty-show-done; fi"

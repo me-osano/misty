@@ -39,7 +39,7 @@ menu() {
 }
 
 terminal() {
-  alacritty --app-id=org.misty.terminal "$@"
+  $TERMINAL --class=org.misty.terminal "$@"
 }
 
 present_terminal() {
