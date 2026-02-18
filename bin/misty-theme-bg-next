@@ -47,5 +47,5 @@ else
   hyprctl hyprpaper unload "$CURRENT_BACKGROUND_LINK" >/dev/null 2>&1
   hyprctl hyprpaper preload "$CURRENT_BACKGROUND_LINK" >/dev/null 2>&1
   hyprctl hyprpaper wallpaper ",$CURRENT_BACKGROUND_LINK" >/dev/null 2>&1
-  setsid hyprpaper &
+  setsid uwsm-app -- hyprpaper &
 fi

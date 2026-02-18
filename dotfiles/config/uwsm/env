@@ -1,0 +1,12 @@
+# Changes require a restart to take effect.
+
+# Ensure Misty bins are in the path
+export MISTY_PATH=$HOME/.local/share/misty
+export PATH=$MISTY_PATH/bin:$PATH
+
+export TERMINAL=alacritty
+export EDITOR=nvim
+export MISTY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+
+# Activate mise if present on the system
+misty-cmd-present mise && eval "$(mise activate bash)"

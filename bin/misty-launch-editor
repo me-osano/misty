@@ -10,6 +10,6 @@ nvim | vim | nano | micro | hx | helix | fresh)
   exec misty-launch-tui "$EDITOR" "$@"
   ;;
 *)
-  exec setsid "$EDITOR" "$@"
+  exec setsid uwsm-app -- "$EDITOR" "$@"
   ;;
 esac

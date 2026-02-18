@@ -27,7 +27,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SUDO_EDITOR=nvim
 export BAT_THEME=ansi
-export TERMINAL=alacritty
+#export TERMINAL=alacritty
 
 # ============================================
 # Development environment
@@ -50,14 +50,14 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # mise (runtime version manager) - if using
-[[ -d "$HOME/.local/share/mise/shims" ]] && export PATH="$HOME/.local/share/mise/shims:$PATH"
+#[[ -d "$HOME/.local/share/mise/shims" ]] && export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # ===========================================
 # Misty PATH Setup
 # ============================================
-export MISTY_PATH="$HOME/.local/share/misty"
-export PATH="$MISTY_PATH/bin:$PATH"
-export MISTY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+#export MISTY_PATH="$HOME/.local/share/misty"
+#export PATH="$MISTY_PATH/bin:$PATH"
+#export MISTY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
 
 # ============================================
 # Wayland environment variables
@@ -81,9 +81,9 @@ export VDPAU_DRIVER=radeonsi      # VDPAU for AMD
 # ============================================
 # TTY1 auto-start Hyprland
 # ============================================
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec start-hyprland
-fi
+#if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+#  exec start-hyprland
+#fi
 
 # ============================================
 # SSH agent (if using SSH keys)

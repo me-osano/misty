@@ -4,4 +4,4 @@
 # Usage: misty-restart-app <application-name>
 
 pkill -x $1
-setsid $1 >/dev/null 2>&1 &
+setsid uwsm-app -- $1 >/dev/null 2>&1 &
